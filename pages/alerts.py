@@ -13,3 +13,4 @@ class Alerts(BasePage):
         self.text_confirm = WebElement(driver, '#confirmResult')
         self.promptButton = WebElement(driver, '#promtButton')
         self.promptResult = WebElement(driver, '#promptResult')
+        self.btn_timer = WebElement(driver,'#timerAlertButton')

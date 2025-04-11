@@ -26,3 +26,4 @@ class WebTables(BasePage):
         self.btn_previous = WebElement(driver, '.-previous > button')
         self.total_pages = WebElement(driver, 'span.-pageInfo > span')
         self.page_num = WebElement(driver,'span.-pageInfo > div > input[type=number]')
+        self.columnheader = WebElement(driver,'div[role="columnheader"]')
