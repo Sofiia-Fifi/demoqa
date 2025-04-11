@@ -21,3 +21,8 @@ class WebTables(BasePage):
         self.department = WebElement(driver, '#department')
         self.record_4 = WebElement(driver, ' div.rt-tbody > div:nth-child(4) > div')
         self.btn_edit = WebElement(driver,'#edit-record-4 > svg > path')
+        self.rows_per_page = WebElement(driver, 'span.select-wrap.-pageSizeOptions > select')
+        self.btn_next = WebElement(driver, '.-next > button')
+        self.btn_previous = WebElement(driver, '.-previous > button')
+        self.total_pages = WebElement(driver, 'span.-pageInfo > span')
+        self.page_num = WebElement(driver,'span.-pageInfo > div > input[type=number]')
