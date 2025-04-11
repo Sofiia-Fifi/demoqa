@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
-import logging
+
 
 class WebElement:
     def __init__(self, driver, locator='', locator_type = 'css'):
@@ -73,13 +73,6 @@ class WebElement:
         else:
             print("Locator type " + self.locator_type + " not correct")
         return False
-
-    def alert(self):
-        try:
-            return self.driver.switch_to.alert
-        except Exception as ex:
-            logging.log(1, ex)
-            return False
 
     def scroll_to_element(self):
         self.driver.execute_script(
