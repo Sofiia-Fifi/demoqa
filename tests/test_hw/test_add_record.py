@@ -36,6 +36,7 @@ def test_add_record(browser):
 
 # в таблицу добавляется новая запись с введенными данными
     assert webtables_page.record_4.exist()
+    record_4_current = webtables_page.record_4.get_text()
 
 # если кликнуть на карандаш на строке записи
     webtables_page.btn_edit.click()
@@ -48,10 +49,12 @@ def test_add_record(browser):
     webtables_page.first_name.send_keys('engineer')
     webtables_page.btn_modal_submit.click_force()
     time.sleep(2)
-    # assert
+    record_4_new = webtables_page.record_4.get_text()
+    assert not record_4_current == record_4_new
+    time.sleep(2)
 
 
 # если нажать на корзину в строке записи - запись удаляется
     webtables_page.delete_record.click()
     time.sleep(2)
-    # assert
+    assert webtables_page.record_4.get_text() == "       "
